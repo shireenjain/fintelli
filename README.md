@@ -16,7 +16,7 @@
   This will contribute to the development of a **quantitative advisor chatbot** designed to assist investors in making informed decisions. The chatbot will provide tailored investment advice based on quantitative data.
 
 - **Key Components**:  
-  The project, in its current stage, explores three distinct quantitative investment strategies:
+  The project, in its current stage, explores three distinct quantitative investment strategies. Sample outputs and datasets are provided in a Google Sheet, which can be accessed [here](https://docs.google.com/spreadsheets/d/1yUuq0K5O5NqUBcGugn1IqANLC-laJqKY6tpvO0AOHmg/edit?usp=sharing). The trading strategies are:
 
   - **Equal-Weight Nifty 50 Index Fund**:  
     - **Objective**: Challenge the traditional market-capitalization-weighted approach by allocating equal weight to all stocks in the Nifty 500 index.  
@@ -37,8 +37,8 @@
       - Compute a Robust Value (RV) score by aggregating percentiles of these ratios.
 
 - **Integration**:  
-  - These strategies will form the foundation of an advisor chatbot that equips investors with data-driven tools for making investment decisions.  
-  - The chatbot will incorporate company research, data trends, and financial metrics to offer a comprehensive and diverse approach to investing.
+  - These strategies will form the foundation of an advisor chatbot that equips investors for making investment decisions.  
+  - The chatbot will also be incorporating company research, data trends, and financial metrics to offer a comprehensive and diverse approach to investing.
 
 - **Innovation and Diversity**:  
   - The project offers a diverse set of investment strategies to cater to different investor profiles, enhancing decision-making through:
