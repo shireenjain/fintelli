@@ -1,6 +1,6 @@
-# Fintelli: An AI-Enabled Financial Advisor
+# Fintelli: A Quantitative Financial Advisor
 
-Team Members:
+**Team Members**:
 - Shireen Jain
 - Amodh Sharma
 - Shruti Gupta
@@ -9,58 +9,44 @@ Team Members:
 
 ---
 
-## Objective
+### Introduction and Project Novelty
 
-Fintelli leverages a 3-pipeline architecture to deliver a comprehensive AI-enabled financial advisor. It leverages the following components:
+- **Objective**:  
+  The goal of this project is to implement and evaluate diverse quantitative investment strategies within the context of the Indian stock market, specifically using the Nifty 50 and Nifty 500 indices.  
+  This will contribute to the development of a **quantitative advisor chatbot** designed to assist investors in making informed decisions. The chatbot will provide tailored investment advice based on quantitative data.
 
-### 1. Training Pipeline
-- **Features:**
-  - Loads a proprietary Q&A dataset.
-  - Fine-tunes an open-source LLM using QLoRA.
-  - Logs training experiments on [Comet ML](https://www.comet.com) for Experiment tracking and getting Inference results via Comet ML's LLMOps dashboard.
-  - Stores the model in Comet ML's model registry.
-  - Deploys the pipeline using Beam's serverless GPU infrastructure.
+- **Key Components**:  
+  The project, in its current stage, explores three distinct quantitative investment strategies:
 
-### 2. Streaming Real-Time Pipeline
-- **Features:**
-  - Ingests financial news from Alpaca.
-  - Cleans and transforms documents into embeddings using Bytewax.
-  - Stores embeddings in the Qdrant Vector DB.
-  - Automatically deploys to an AWS EC2 machine via a GitHub Actions CI/CD pipeline.
+  - **Equal-Weight Nifty 50 Index Fund**:  
+    - **Objective**: Challenge the traditional market-capitalization-weighted approach by allocating equal weight to all stocks in the Nifty 500 index.  
+    - **Strategy**: Promotes a more balanced risk distribution across the portfolio.
 
-### 3. Inference Pipeline
-- **Features:**
-  - Uses LangChain to create an inference chain that:
-    - Downloads the fine-tuned model from Comet ML's model registry.
-    - Processes user questions and queries the Qdrant Vector DB.
-    - Enhances prompts with financial news context and chat history.
-    - Calls the fine-tuned LLM for financial advice.
-    - Logs interactions on Comet ML's LLMOps monitoring dashboard.
-  - Deploys as a RESTful API on Beam's serverless GPU infrastructure.
-  - Includes a Gradio-based UI for demonstration.
+  - **Quantitative Momentum Investing**:  
+    - **Objective**: Identify and invest in Nifty 50 stocks exhibiting strong recent performance.  
+    - **Approach**:  
+      - Analyze historical price trends across multiple timeframes (1 year, 6 months, 3 months, and 1 month).  
+      - Rank stocks based on percentile scores of returns.  
+      - Use a High Quality Momentum (HQM) score to combine these rankings.
 
----
+  - **Quantitative Value Investing**:  
+    - **Objective**: Identify undervalued Nifty 50 stocks with strong growth potential.  
+    - **Approach**:  
+      - Analyze key financial ratios like P/E, P/B, and price-to-sales.  
+      - Apply filters and thresholds to select undervalued stocks.  
+      - Compute a Robust Value (RV) score by aggregating percentiles of these ratios.
 
-## Exploratory Data Analysis (EDA)
-The prompts for training were analyzed to gain insights:
+- **Integration**:  
+  - These strategies will form the foundation of an advisor chatbot that equips investors with data-driven tools for making investment decisions.  
+  - The chatbot will incorporate company research, data trends, and financial metrics to offer a comprehensive and diverse approach to investing.
 
-### Token Analysis:
-- **Metrics:**
-  - Average token length.
-  - Token length distribution.
-  - Min/Max tokens per prompt.
+- **Innovation and Diversity**:  
+  - The project offers a diverse set of investment strategies to cater to different investor profiles, enhancing decision-making through:
+    - Portfolio balance (Equal-Weight Strategy).
+    - Momentum-based performance (Momentum Strategy).
+    - Value-based stock selection (Value Strategy).
 
-- **Coverage:**
-  - Prompt coverage relative to token length.
-  - Context size coverage.
-
-- **Insights:**
-  - Balanced prompts relative to context size.
-  - Distribution skew for sentence lengths.
-  - Detection of outliers.
-
-### Word Analysis:
-- **Word Cloud:**
-  - Visual representation of key topics within the dataset.
+- **End Goal**:  
+  - To provide a holistic and customizable investment experience, integrating multiple investing strategies and real-time data from the Indian stock market.
 
 ---
